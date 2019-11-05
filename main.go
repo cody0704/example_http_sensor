@@ -6,8 +6,7 @@ import (
 	"net/http"
 
 	"encoding/json"
-
-	"github.com/shirou/gopsutil/cpu"
+	// "github.com/shirou/gopsutil/mem"
 )
 
 func main() {
@@ -16,15 +15,12 @@ func main() {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	cpuInfo, err := cpu.Info()
-	if err != nil {
-		log.Println(err)
-	}
+	// vm, _ := mem.VirtualMemory()
 
 	var res map[string]interface{}
 	res = make(map[string]interface{})
 
-	res["CPU Counts"] = cpuInfo
+	res["test"] = "Hello"
 
 	resJson, _ := json.Marshal(res)
 
