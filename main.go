@@ -28,7 +28,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	resJson, _ := json.Marshal(res)
 
-	fmt.Fprintf(w, "%s", prtgFormat(resJson))
+	fmt.Fprintf(w, "%s", resJson)
 }
 
 func prtgFormat(data []byte) string {
