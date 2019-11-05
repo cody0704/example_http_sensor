@@ -30,7 +30,3 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Fprintf(w, "%s", resJson)
 }
-
-func prtgFormat(data []byte) string {
-	return "0:GolangHttpCPU:" + string(data)
-}
